@@ -1,6 +1,6 @@
 # Joseph McCourt Thesis Resources
 
-# List of Codes#
+# List of Codes
 
 ### Running Python Scripts ###
 ---
