@@ -1,0 +1,15 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+plt.style.use('veusz')
+
+
+form=pd.read_csv("sample172.csv.fit",index_col=0) 
+data=pd.read_csv("sample172.csv.scaled",index_col=0)
+
+plt.loglog(form[form.columns[0]],form[form.columns[1]])
+plt.loglog(data[data.columns[0]],data[data.columns[1]]) 
+plt.loglog(data[data.columns[0]],data[data.columns[1]].values/form[form.columns[1]].values)
+plt.loglog(data[data.columns[0]],form[form.columns[1]].values/form[form.columns[1]].values)
+plt.show()
+
