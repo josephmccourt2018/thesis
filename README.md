@@ -22,4 +22,4 @@ McCourt 2022
 
 ### Follow Ups & Questions ###
 ---
-The HRD script was written by Andy Pang, and this README and files have been uploaded by Kelsea Chang. For any questions, please reach out to either party.
+Scripts were written by Joseph McCourt reachable at mccourt.joseph@gmail.com
