@@ -1,5 +1,7 @@
 # Joseph McCourt Thesis Resources
 
+
+
 # List of Codes
 
 ### Running Python Scripts ###
@@ -11,15 +13,21 @@ python [filename].py [args]
 
 ** Required Files **
 ```
--Python libraries
+-variety of Python libraries
 ```
 
-1D scattering profiles can be found in reduced_data for different samples
+# Experimental data
 
-### Publication ###
+1D scattering profiles can be found in reduced_saxs_data for different samples
+
+# Computational data
+
+### Publications ###
 ---
-McCourt 2022
+Gao et al. 2019
+McCourt et al. 2022
+McCourt et al. 2023 (soon to be submitted)
 
 ### Follow Ups & Questions ###
 ---
-Scripts were written by Joseph McCourt reachable at mccourt.joseph@gmail.com
+Joseph McCourt reachable at mccourt.joseph@gmail.com
