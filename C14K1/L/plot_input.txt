@@ -1,3 +1,0 @@
-for 0,5,10,25,50 mM NaCl
-
-python ../../plotter_scaled.py sample096.csv sample132.csv sample104.csv sample134.csv sample112.csv
