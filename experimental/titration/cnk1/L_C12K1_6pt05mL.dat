@@ -1,0 +1,39 @@
+# Date of Measurement: 20210306
+# Titration Curve
+# 6.05 mL of 4 mM L-C12K1
+#
+# 45 minute wait for initial pH, 15 minutes in between measurements up to pH
+# 8.68, 10 minutes up to pH 9.97, 5 minutes until finish
+#
+# See Joey McCourt Dec. 2018 -    Lab Notebook p. 113-114 for more info
+#
+# Col 1, total added amount of 100mM NaOH (uL) (pH~13, measured with strip)
+# Col 2, pH
+0     5.06
+2.5   6.31
+5     7.11
+7.5   7.60
+10    7.81
+15    7.92
+20    7.99
+25    8.06
+30    8.06
+35    8.07
+40    8.08
+50    8.17
+60    8.28
+65    8.32
+70    8.37
+80    8.44
+90    8.52
+100   8.56
+120   8.54
+140   8.68
+160   8.80
+180   9.03
+200   9.39
+220   9.49
+240   9.97
+260   10.42
+280   10.67
+310   10.93

@@ -1,0 +1,43 @@
+# Titration Curve
+# 5 mL of 4 mM D-C16K1 (HCl counterion)
+#
+# 10 minutes between points from 0 to 40 (might not be long enough wait time)
+# 20 minutes between point 40 to 45, 50 - 150
+# 40 minutes between point 45 to 50
+# shorter wait time for higher pH, equilibrated faster
+#
+# Col 1, total added amount of 100mM NaOH (uL)
+# Col 2, pH
+0     4.74
+5     5.33
+10    5.41
+15    5.61
+20    5.79
+25    5.98
+30    6.05
+35    5.97
+40    6.10
+45    6.29
+50    6.34
+60    6.49
+70    6.69
+80    6.92
+90    6.99
+100   7.22
+110   7.34
+120   7.54
+130   7.75
+140   7.92
+140   8.24
+150   8.33
+160   8.50
+170   8.84
+180   9.21
+190   9.56
+200   9.78
+220   10.14
+240   10.45
+260   10.63
+280   10.76
+320   11.03
+360   11.19

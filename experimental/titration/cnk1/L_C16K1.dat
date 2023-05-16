@@ -1,0 +1,34 @@
+# Date of Measurement: 20200915
+# Titration Curve
+# 5 mL of 4 mM L-C16K1 (C16K sample 20170525)
+#
+# 10 - 15 minutes in between measurements
+#
+# Col 1, total added amount of 100mM NaOH (uL) (NaOH solution might have higher
+# concentration due to sitting out for a while)
+# Col 2, pH
+0     4.56
+10    4.93
+20    4.98
+30    5.27
+40    5.46
+50    5.74
+60    6.12
+70    6.40
+80    6.57
+90    6.81
+100   7.04
+110   7.27
+120   7.39
+130   7.69
+140   7.99
+150   8.26
+160   8.51
+170   8.91
+180   9.38
+190   9.83
+200   10.10
+220   10.46
+240   10.66
+270   10.89
+300   11.03
