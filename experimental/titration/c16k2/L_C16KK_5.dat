@@ -1,0 +1,58 @@
+# Date of Measurement: 20220729
+# Titration Curve
+# 5 mL of *~4 mM* L-C16KK in 100mM NaCl
+#
+# Electrode: SKU-35811-72, APR 2022, Oakton Probe, pH/Temp all-in-one
+# Meter: Oakton pH 6 Acorn Series
+#
+# Titrant: 20220725 0.1 M NaOH
+#
+# *The mass measurement of the PA is a bit off since the scale gave
+# an error after having already put molecules inside the container.
+# (gave negative reading after first scoop)
+# *It was also the last bit of C16K2, so I was scrapping the last bit
+# from the 50mL falcon tubes.
+# 
+# Col 1, total added amount of 100mM NaOH (uL)
+# Col 2, pH
+# Col 3, wait time (min)
+0     4.48    5
+2.5   4.90    5
+5     5.58    5
+7.5   6.43    5
+10    6.74    5
+15    7.12    5
+20    7.35    5
+30    7.61    5
+40    7.77    5
+50    7.89    5
+60    8.00    5
+70    8.09    5
+80    8.17    5
+90    8.25    5
+100   8.32    5
+120   8.47    5
+140   8.61    5
+160   8.73    5
+170   8.74    5
+180   8.74    5
+190   8.71    5
+200   8.66    5
+220   8.65    5
+240   8.63    5
+260   8.62    5
+280   8.62    5
+300   8.61    5
+330   8.70    5
+340   8.80    5
+350   8.95    5
+360   9.05    5
+370   9.17    5
+380   9.30    5
+390   9.38    5
+410   9.65    5
+430   9.86    5
+450   10.02   5
+480   10.26   2
+510   10.46   2
+560   10.71   1
