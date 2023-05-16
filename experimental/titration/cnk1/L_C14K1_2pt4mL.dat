@@ -1,0 +1,27 @@
+# Date of Measurement: 20201116
+# Titration Curve
+# 2.4 mL of 4 mM L-C14K1
+#
+# 5 - 15 minutes in between measurements
+#
+# Col 1, total added amount of 100mM NaOH (uL)
+# Col 2, pH
+0     4.96
+5     6.19   
+10    6.57   
+15    6.92   
+20    7.20   
+25    7.42   
+30    7.65   
+35    7.92   
+40    8.13   
+45    8.31   
+50    8.52   
+55    8.79   
+60    9.10   
+65    9.55   
+70    9.81   
+75    10.27  
+80    10.35 
+90    10.58  
+100   10.77
