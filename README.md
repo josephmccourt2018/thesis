@@ -2,7 +2,7 @@
 
 
 
-# List of Codes
+## List of Codes
 
 ### Running Python Scripts ###
 ---
@@ -16,11 +16,13 @@ python [filename].py [args]
 -variety of Python libraries
 ```
 
-# Experimental data
+## Experimental data
 
 1D scattering profiles can be found in reduced_saxs_data for different samples
 
-# Computational data
+## Computational data
+
+Force fields, topology files, structure files, trajectories for atomistic and coarse-grained simulations
 
 ### Publications ###
 ---
