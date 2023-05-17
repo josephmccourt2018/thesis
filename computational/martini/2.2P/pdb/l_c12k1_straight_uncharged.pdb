@@ -1,0 +1,12 @@
+TITLE     L-C14K1 Martini in water
+REMARK    THIS IS A SIMULATION BOX
+CRYST1   55.397   55.397   55.397  90.00  90.00  90.00 P 1           1
+MODEL        1
+ATOM      1  A2  CK12    1      29.130  17.230  29.450  1.00  0.00            
+ATOM      2  C1  CK12    1      27.560  25.770  29.020  1.00  0.00            
+ATOM      3  C2  CK12    1      26.270  30.220  28.780  1.00  0.00            
+ATOM      4  C3  CK12    1      26.780  34.240  26.460  1.00  0.00            
+ATOM      5  B   CK12    1      28.050  19.150  28.590  1.00  0.00            
+ATOM      6  CA  CK12    1      27.900  22.330  28.500  1.00  0.00            
+TER
+ENDMDL
