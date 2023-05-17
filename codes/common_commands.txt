@@ -1,0 +1,142 @@
+##############################################################
+20200310
+
+***For setting up simulations***
+
+INSERT MOLECULES
+gmx insert-molecules -ci c16k1_straight.gro -nmol 128 -box 10 10 10 -try 500 -o 128_c16k1_straight.gro
+
+SOLVATE
+gmx solvate -cp 128_c16k1_min.gro -cs water_PW.gro -o c16k1_water.gro -p c16k1.top
+
+ADD IONS
+gmx grompp -f ions.mdp -c c16k1_water.gro -p c16k1.top -o ions.tpr
+gmx genion -s ions.tpr -o c16k1_water_ions.gro -p c16k1.top -pname NA -nname CL- -neutral
+
+MINIMIZE
+gmx grompp -f em.mdp -c c16k1_water_ions.gro -p c16k1.top -o em.tpr -maxwarn 1
+gmx mdrun -deffnm em -v -c system_min.gro
+
+MAKE INDEX
+gmx make_ndx -f em.gro -o index.ndx
+within make_ndx: 2 | 3, name 6 C16K1
+                 4 | 5, name 7 PW_ION
+		 q
+
+
+
+***For constructing configurations***
+
+STITCHING TOGETHER MULTIPLE COPIES OF SAME CONFIGURATION
+gmx genconf -nbox 1 2 1 -f bilayer.gro -o bilayer_ribbon.gro
+gmx editconf -f bilayer_ribbon.gro -o bilayer_ribbon_newbox.gro -c -box 7 14 7 -pbc
+
+RECENTERING AND DEALING WITH PBC FOR CONFIGURATION
+Making the bilayer and accomodating pbc is a pain (again), these commands
+may work
+
+First in iPython to acquire bilayer only (get rid of water):
+source activate mdaenv
+ipython
+import numpy as np
+import MDAnalysis as mda
+u = mda.Universe("...topology...", "...trajectory...")
+u.trajectory #to see how many frames
+frame = 500 #or whatever frame is next to last in u.trajectory (since I had an
+            #issue before using the last frame
+u.trajectory[frame] #goes to 500th frame
+u.select_atoms('resname CK1*').write('structure.gro')
+
+
+gmx editconf -f bilayer.gro -o bilayer_centered.gro -c
+gmx editconf -f bilayer_centered.gro -o bilayer_centered2.gro -translate 0 0 3
+gmx trjconv -f bilayer_centered2.gro -s c16k1_md.tpr -o bilayer_final.gro -pbc res -n index.ndx
+
+make sure *.tpr and *.ndx file are the files from the simulation where this
+membrane formed and then just choose the corresponding group
+
+
+RENUMBERING COMBINED *.GRO FILES (HAVE TO COMBINE FILES MANUALLY)
+gmx genconf -f system.gro -o system_renumbered.gro -renumber
+
+
+***For density analysis of headgroups and lipids***
+
+gmx make_ndx -f c16k1_md.gro -o density_groups.ndx
+within make_ndx: 6 & a A1 | a B
+       		 name 9 Headgroups
+		 6 & a C1 | a C2 | a C3 | a C4
+		 name 10 Tails
+		 q
+
+gmx density -s c16k1_md.tpr -f c16k1_md.xtc -n density_groups.ndx -o dens_tails_Z.xvg -d Z -b 0 -e 1 -dens number
+
+gmx density -s c16k1_md.tpr -f c16k1_md_skip10.xtc -n density_groups.ndx -o dens_tube_z.xvg -d z -b 17100 -e 17200 -dens number -center
+
+
+
+
+
+
+###############################################################################
+20201024
+
+For using gmx_LS in quest (local stress gromacs version):
+
+alias gmx_LS="/home/joey/../../projects/b1021/Joey/programs/gromacs-ls-2016.3/build/bin/gmx_LS"
+
+source /home/joey/../../projects/b1021/Joey/programs/bin/bin/GMXRC
+
+
+
+###############################################################################
+20201026
+
+Guideline for setting up a running gmx_LS (can only run on one CPU core (no
+OpenMP or (thread)MPI functionality)). Therefore, do not use -ntomp or -ntmpi
+paramters in mdrun
+	  - Will need a way to fix this in the future
+
+1) a) Make sure you generate *.trr files with position and velocities. If this
+was not done for some production run, create one continuing the simulation using
+gmx grompp ... -t *.cpt -f *trr*.mdp -o md_semi_cont.trr  where the checkpoint
+is from previous simulation and new mdp file generates a trr file.
+   b) If a trr file exists, still need to make a new tpr file with cutoff
+   electostatics instead of PME (rcoulomb = rvdw = 2.0 > 1.2 as it is for PME)
+   gmx_LS grompp -f prod_semi_stress.mdp ... -o md_semi_cont.tpr
+
+2) Following gmx_LS manual (Local_Stress.pdf), center the trajectory:
+gmx_LS trjconv -f md_semi_cont.trr -o md_semi_cont_centered.trr -n index.ndx
+-center -s md_semi_cont.tpr
+	- may also wish to slice trajectory for some number of ps (ns) using
+	gmx_LS trjconv ... -b [t_i(ps)] -e [t_f(ps)]
+
+3) Then rerun the trajectory
+gmx_LS mdrun -deffnm ... -rerun
+
+4) Use jupyter notebook in L_C16K/packmol_bilayer_4/more_dense/stress/ to read
+in stress.txt files (have to convert stress.dat0 to stress.txt first using
+/programs/bin/bin/tensortools -f stress.dat0 -o stress.txt
+
+##############################################################################
+20210111
+
+Following what is stated in the 20201026 note:
+
+E.G.
+If separate trajectories, combine and rerun as 1 trajectory. There is an issue
+with grid size and averaging if you try to perform averaging after gmx_LS:
+
+gmx_LS trjcat -f ../md_semi_cont.trr ../md_semi_cont_2.trr -o md_semi_cont_combined.trr -settime<<EOF
+0
+40000
+EOF
+
+New centered trajectory
+echo 1 0 | gmx_LS trjconv -f md_semi_cont_combined.trr -o md_semi_cont_centered_combined.trr -n ../index.ndx -center -s ../md_semi_cont.tpr
+
+New tpr file with adjusted coulomb interactions (no PME)
+gmx_LS grompp -f prod_semi_stress_2.mdp -c ../md_semi.gro -t ../md_semi.cpt -p ../topol.top -n ../index.ndx -o md_semi_cutoff_combined.tpr
+
+rerunning trajectory
+gmx_LS mdrun -deffnm md_semi_LS_combined -s md_semi_cutoff_combined.tpr -rerun md_semi_cont_centered_combined.trr
