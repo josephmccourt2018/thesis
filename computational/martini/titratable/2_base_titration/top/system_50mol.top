@@ -1,0 +1,12 @@
+#define pH<value>
+#include "../../force_fields/martini.itp"
+#include "../../force_fields/molecules.itp"
+#include "../martini_c16k1_titratable_v6.itp"
+
+[ System ]
+aniline in water
+
+[ molecules ]
+CK1T     50
+WNA	 3754
+H+	 3754
