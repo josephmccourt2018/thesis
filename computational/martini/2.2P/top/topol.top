@@ -1,0 +1,14 @@
+; Include chain topologies
+#include "martini_v2.2P_PS.itp"
+#include "martini_v2.0_ions.itp"
+#include "martini_c16k1_v3.itp"
+#include "martini_c16k1_uncharged_v2.itp"
+
+; System specifications
+[ system ]
+L-C16K1 Martini in water
+
+[ molecules ]
+; molecule name nr.
+CK1+              1
+CK1		  1
