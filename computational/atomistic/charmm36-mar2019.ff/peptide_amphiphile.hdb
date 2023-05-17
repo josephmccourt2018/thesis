@@ -1,0 +1,22 @@
+C16     15
+3       4       HA      CA      CB      CC
+2       6       HB      CB      CA      CC
+2       6       HC      CC      CB      CD
+2       6       HD      CD      CC      CE
+2       6       HE      CE      CD      CF
+2       6       HF      CF      CE      CG
+2       6       HG      CG      CF      CH
+2       6       HH      CH      CG      CI
+2       6       HI      CI      CH      CJ
+2       6       HJ      CJ      CI      CK
+2       6       HK      CK      CJ      CL
+2       6       HL      CL      CK      CM
+2       6       HM      CM      CL      CN
+2       6       HN      CN      CM      CO
+2       6       HO      CO      CN      C
+GLUe            5
+1       1       HN      N       -C      CA
+1       5       HA      CA      N       C       CB
+2       6       HB      CB      CG      CA
+2       6       HG      CG      CD      CB
+2       3       HT      NT      C       CA

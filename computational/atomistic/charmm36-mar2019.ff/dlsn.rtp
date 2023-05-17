@@ -1,0 +1,50 @@
+[ DLSN ]
+  [ atoms ]
+	    N   NH1   -0.470  0
+	   HN     H    0.310  1
+	   CA  CTD1    0.070  2
+	   HA   HB1    0.090  3
+	   CB   CT2   -0.180  4
+	  HB1   HA2    0.090  5
+	  HB2   HA2    0.090  6
+	   CG   CT2   -0.180  7
+	  HG1   HA2    0.090  8
+	  HG2   HA2    0.090  9
+	   CD   CT2   -0.180 10
+	  HD1   HA2    0.090 11
+	  HD2   HA2    0.090 12
+	   CE   CT2    0.210 13
+	  HE1   HA2    0.050 14
+	  HE2   HA2    0.050 15
+	   NZ   NH3   -0.300 16
+	  HZ1    HC    0.330 17
+	  HZ2    HC    0.330 18
+	    C     C    0.510 19
+	    O     O   -0.510 20
+  [ bonds ]
+	   CB    CA
+	   CG    CB
+	   CD    CG
+	   CE    CD
+	   NZ    CE
+	    N    HN
+	    N    CA
+	    C    CA
+	    C    +N
+	   CA    HA
+	   CB   HB1
+	   CB   HB2
+	   CG   HG1
+	   CG   HG2
+	   CD   HD1
+	   CD   HD2
+	   CE   HE1
+	   CE   HE2
+	   NZ   HZ1
+	   NZ   HZ2
+	    O     C
+  [ impropers ]
+	    N    -C    CA    HN
+	    C    CA    +N     O
+  [ cmap ]
+	   -C     N    CA     C    +N
