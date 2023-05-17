@@ -27,7 +27,9 @@ Force fields, topology files, structure files, trajectories for atomistic and co
 ### Publications ###
 ---
 Gao et al. 2019
+
 McCourt et al. 2022
+
 McCourt et al. 2023 (soon to be submitted)
 
 ### Follow Ups & Questions ###
