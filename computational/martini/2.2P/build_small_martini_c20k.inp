@@ -1,0 +1,25 @@
+tolerance 8.0
+filetype pdb
+output c20_unit.pdb
+add_box_sides
+seed  -1
+
+structure l_c20k1_straight_uncharged.pdb
+  number  10
+  atoms 6
+    inside box 0 0 15 20 20 50
+  end atoms
+  atoms 1
+    inside box 0 0 70 20 20 90
+  end atoms
+end structure
+
+structure l_c20k1_straight_uncharged.pdb
+  number  10
+  atoms 6
+    inside box 0 0 40 20 20 60
+  end atoms
+  atoms 1
+    inside box 0 0 15 20 20 20
+  end atoms
+end structure
