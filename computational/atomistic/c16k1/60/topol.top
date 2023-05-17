@@ -1,0 +1,69 @@
+;
+;	File 'topol.top' was generated
+;	By user: joey (1000)
+;	On host: joey-Inspiron-7573
+;	At date: Thu Aug 27 15:21:44 2020
+;
+;	This is a standalone topology file
+;
+;	Created by:
+;	                    :-) GROMACS - gmx pdb2gmx, 2019.2 (-:
+;	
+;	Executable:   /usr/local/gromacs/bin/gmx
+;	Data prefix:  /usr/local/gromacs
+;	Working dir:  /home/joey/Documents/quest_b1021/CK1
+;	Command line:
+;	  gmx pdb2gmx -f c16k1.gro -ignh -ter -o c16k1_processed.gro
+;	Force field was read from current directory or a relative path - path added.
+;	pdb2gmx inputs: 1 TIP3P (recommended water), 3 None (C16 terminus), 4 NH2 (LYS terminus)
+
+; Include forcefield parameters
+#include "./charmm36-mar2019.ff/forcefield.itp"
+
+#include "l_c16k1.itp"
+#include "l_neutral_c16k1.itp"
+
+; Include Position restraint file
+#ifdef POSRES
+#include "posre.itp"
+#endif
+
+; Include water topology
+#include "./charmm36-mar2019.ff/tip3p.itp"
+
+#ifdef POSRES_WATER
+; Position restraint for each water oxygen
+[ position_restraints ]
+;  i funct       fcx        fcy        fcz
+   1    1       1000       1000       1000
+#endif
+
+; Include topology for ions
+#include "./charmm36-mar2019.ff/ions.itp"
+
+[ system ]
+; Name
+C16K1 (L-lysine) 1 molecule in water
+
+[ molecules ]
+; Compound        #mols
+ProteinLN             8
+ProteinL	     12
+ProteinLN             8
+ProteinL	     12
+ProteinLN             8
+ProteinL	     12
+ProteinLN             8
+ProteinL	     12
+ProteinLN             8
+ProteinL	     12
+ProteinLN             8
+ProteinL	     12
+ProteinLN             8
+ProteinL	     12
+ProteinLN             8
+ProteinL	     12
+ProteinLN             8
+ProteinL	     12
+SOL         9264
+CL               108
