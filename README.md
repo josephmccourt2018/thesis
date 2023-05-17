@@ -4,9 +4,11 @@
 
 ## List of Codes
 
+Codes directory contain variety of files and scripts (Python, Mathematica, Jupyter Notebook, Bash, and Perl)
+
 ### Running Python Scripts ###
 ---
-Current execution command
+Execution command (varies between files)
 ```
 python [filename].py [args]
 ```
@@ -20,9 +22,13 @@ python [filename].py [args]
 
 1D scattering profiles can be found in reduced_saxs_data for different samples
 
+Other experimental data (CD,AFM,cry-TEM,titraion) is also included in corresponding directories
+
 ## Computational data
 
-Force fields, topology files, structure files, trajectories for atomistic and coarse-grained simulations
+Force fields, topology files, structure files, final snap shot for atomistic and coarse-grained simulations
+
+Directory names correspond to fixed charged percentage of simulation
 
 ### Publications ###
 ---
