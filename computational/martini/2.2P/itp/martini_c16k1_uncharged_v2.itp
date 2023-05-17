@@ -1,0 +1,35 @@
+;;;;;; Martini lipid topology for uncharged C16K1 (edited by JOSEPH MCCOURT, SEE martini_lipid.itp) November 14, 2019
+;
+; LYSINE MAPPING: "MARTII Coarse-Grained Force Field: Extension to Proteins," Monticelli et al., JCTC
+
+
+[ moleculetype ]
+; molname      nrexcl
+  CK1        1
+
+[ atoms ]
+; id 	type 	resnr 	residu 	atom 	cgnr 	charge   mass
+  1 	P1 	1 	CK1 	A2 	1       0
+  2 	C1 	1 	CK1 	C1  	2   	0 
+  3 	C1 	1 	CK1 	C2  	3       0 
+  4 	C1 	1 	CK1 	C3  	4       0 
+  5 	C1 	1 	CK1 	C4  	5       0 
+  6     C3  	1  	CK1	B	6       0
+  7	P5	1	CK1	CA	7	0
+
+[ bonds ]
+; i j 	funct 	length 	force.c.
+  7  2 	1 	0.39 	5000	# from DOBONDEDANALYSIS.sh
+  2  3 	1 	0.47 	1250
+  3  4 	1 	0.47 	1250
+  4  5 	1 	0.47 	1250
+  1  6	1	0.28	5000
+  6  7	1	0.33	5000
+  
+[ angles ]
+; i j k 	funct 	angle 	force.c.
+  7  2  3 	2 	180.0 	25.0 
+  2  3  4 	2 	180.0 	25.0 
+  3  4  5 	2 	180.0 	25.0 
+  1  6	7	2	180.0   25.0
+  6  7	2	2	107.0	25.0 # from DOBONDEDANALYSIS.sh
